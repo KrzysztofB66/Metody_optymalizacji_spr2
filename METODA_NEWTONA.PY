@@ -1,4 +1,5 @@
-import numpy as np
+from rysowanie_wykresu import *
+
 def f(x, y):
     return 4 * y**3 + x**2 - 3 * x * y - x + 9
 
@@ -16,15 +17,33 @@ def macierz_hessego(f, x, y, h=0.00001):
     d2fdxdy = (f(x + h, y + h) - f(x + h, y) - f(x, y + h) + f(x, y)) / h ** 2
     return np.array([[d2fdx2, d2fdxdy], [d2fdxdy, d2fdy2]])
 
+def gradient_dokladny(x, y):
+    dfdx = 2 * x - 3 * y - 1
+    dfdy = 12 * y**2 - 3 * x
+    return np.array([dfdx, dfdy])
+
+def macierz_hessego_dokladna(x, y):
+    d2fdx2 = 2
+    d2fdy2 = 24 * y
+    d2fdxdy = -3
+    return np.array([[d2fdx2, d2fdxdy], [d2fdxdy, d2fdy2]])
+
 
 def metoda_newtona(f, x0, e=1e-6, max_iter=None):
     xk, yk = x0
     iteracje = 0
-
+    lista_przyblizen =[]
     while True:
-        grad = gradient(f, xk, yk)
-        hess = macierz_hessego(f, xk, yk)
-        hess_inv = np.linalg.inv(hess)
+        # grad = gradient(f, xk, yk)
+        # hess = macierz_hessego(f, xk, yk)
+        grad = gradient_dokladny(xk, yk)
+        hess = macierz_hessego_dokladna(xk, yk)
+
+        a, b = hess[0, 0], hess[0, 1]
+        c, d = hess[1, 0], hess[1, 1]
+        det = a * d - b * c
+
+        hess_inv = (1 / det) * np.array([[d, -b], [-c, a]])
 
         delta = hess_inv @ grad
         xk_plus1 = xk - delta[0]
@@ -37,19 +56,18 @@ def metoda_newtona(f, x0, e=1e-6, max_iter=None):
                 xk, yk = xk_plus1, yk_plus1
                 break
         else:
-            if np.linalg.norm(grad) <= e:
-                break
             if abs(xk_plus1 - xk) <= e and abs(yk_plus1 - yk) <= e:
                 xk, yk = xk_plus1, yk_plus1
                 break
 
         xk, yk = xk_plus1, yk_plus1
+        lista_przyblizen.append([xk, yk])
 
     print("Liczba iteracji:", iteracje)
-    return [xk, yk]
+    return [xk, yk], lista_przyblizen
 
 
-# print(metoda_newtona(f, x0=[1, 1], e=0.000001))
+wynik = metoda_newtona(f, x0=[1, 1], max_iter=12)
+print(wynik[0])
 
-print(metoda_newtona(f, x0=[1, 1], max_iter=12))
-
+rysuj_wykres(f, wynik[1])
