@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77ca0b25-07c6-41c5-a64a-a06057c2abdf" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/rysowanie_wykresu.py" afterDir="false" />
+    <list default="true" id="77ca0b25-07c6-41c5-a64a-a06057c2abdf" name="Changes" comment="second commit">
+      <change afterPath="$PROJECT_DIR$/METODA_GAUSA_SEIDLA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/METODA_NAJSZYBSZEGO_SPADKU.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/METODA_NEWTONA.PY" beforeDir="false" afterPath="$PROJECT_DIR$/METODA_NEWTONA.PY" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rysowanie_wykresu.py" beforeDir="false" afterPath="$PROJECT_DIR$/rysowanie_wykresu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,17 +27,30 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;KrzysztofB66&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/KrzysztofB66/Metody_optymalizacji_spr2.git&quot;,
+    &quot;accountId&quot;: &quot;04605aa7-87de-4b93-ad91-8002d39c8d83&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2voadNYs0oPardrrm7IXkxhnRkX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.METODA_GAUSA_SEIDLA.executor": "Run",
+    "Python.METODA_NAJSZYBSZEGO_SPADKU.executor": "Run",
     "Python.METODA_NEWTONA.PY.executor": "Run",
     "Python.rysowanie_wykresu.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -47,7 +62,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-4f4e415b4190-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.26053.29" />
+        <option value="bundled-python-sdk-348a24fa61fa-5312c7369657-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.23774.444" />
       </set>
     </attachedChunks>
   </component>
@@ -68,11 +83,20 @@
       <option name="project" value="LOCAL" />
       <updated>1745236764861</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="second commit">
+      <option name="closed" value="true" />
+      <created>1745850193481</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745850193481</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
   </component>
 </project>

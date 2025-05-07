@@ -1,5 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from sqlalchemy.sql.operators import truediv
+
+
 
 def rysuj_wykres(f, przyblizenia):
     x = np.linspace(-2, 2, 400)
@@ -29,6 +32,4 @@ def rysuj_wykres(f, przyblizenia):
     plt.legend()
     plt.grid(True)
     plt.show()
-
-
 
