@@ -1,62 +1,36 @@
 import numpy as np
 from rysowanie_wykresu import rysuj_wykres
 
-
 def f(x, y):
     return 4 * y**3 + x**2 - 3 * x * y - x + 9
 
-def dfdx(x, y):
-    return 2 * x - 3 * y - 1
-
-def dfdy(x, y):
-    return 12 * y**2 - 3 * x
-
-def dffdxx(x, y):
-    return 2
-
-def dffdyy(x, y):
-    return 24 * y
-
-def dfffdxxx(x, y):
-    return 0
-
-def dfffdyyy(x, y):
-    return 24
-
-# metoda stycznych (newtona)
-def metoda_Newtona(df, ddf, dddf, a, b, e=None, iter=None):
-    # if df(a) * df(b) >= 0:
-    #     raise ValueError("Warunek konieczny nie jest spełniony: df(a)*df(b) >= 0")
-    #
-    # if ddf(a) * ddf(b) < 0 or dddf(a) * dddf(b) < 0:
-    #     raise ValueError("Ostrzeżenie: Warunki zbieżności mogą nie być spełnione")
-
-    znak_df_a = df(a) > 0
-    znak_dddf_a = dddf(a) > 0
-
-    xn = a if znak_dddf_a == znak_df_a else b
+def metoda_zlotego_podzialu(f, a, b, e, mode="min", iter=None):
+    k = (5 ** 0.5 - 1) / 2
+    x1 = b - k * (b - a)
+    x2 = a + k * (b - a)
     iteracje = 0
 
-    while True:
-        xn1 = xn - (df(xn) / ddf(xn))
+    while abs(x2 - x1) > e:
         iteracje += 1
-
-        if e is not None:
-            if abs(df(xn1)) < e or abs(xn1 - xn) < e:
-                break
 
         if iter is not None and iteracje >= iter:
             break
 
-        if e is None and iter is None:
-            print("Uwaga: ani epsilon, ani liczba iteracji nie są ustawione – potencjalna nieskończona pętla!")
-            break
+        f_x1, f_x2 = f(x1), f(x2)
 
-        xn = xn1
+        if (mode == "min" and f_x1 < f_x2) or (mode == "max" and f_x1 > f_x2):
+            b = x2
+            x2 = x1
+            x1 = b - k * (b - a)
+        else:
+            a = x1
+            x1 = x2
+            x2 = a + k * (b - a)
 
-    return xn1
 
-def gradient(f, x, y, h=0.00001):
+    return (a + b) / 2
+
+def gradient(f, x, y, h=0.0000001):
     dfdx = (f(x + h, y) - f(x, y)) / h
     dfdy = (f(x, y + h) - f(x, y)) / h
     return np.array([dfdx, dfdy])
@@ -66,20 +40,13 @@ def gradient_dokladny(x, y):
     dfdy = 12 * y**2 - 3 * x
     return np.array([dfdx, dfdy])
 
-def metoda_gaussa_seidla(f, x0, e, max_iter=None):
+def metoda_gaussa_seidla(f, x0, e=None, max_iter=None):
     xk, yk = x0
-    lista_przyblizen = [[xk, yk]]
+    lista_przyblizen = []
     iteracje = 0
     while True:
-        xk = metoda_Newtona(lambda x: dfdx(x, yk),
-                            lambda x: dffdxx(x, yk),
-                            lambda x: dfffdxxx(x, yk),
-                            0, 200, 1e-8)
-
-        yk = metoda_Newtona(lambda y: dfdy(xk, y),
-                            lambda y: dffdyy(xk, y),
-                            lambda y: dfffdyyy(xk, y),
-                            0, 200, 1e-8)
+        xk = metoda_zlotego_podzialu(lambda x: f(x, yk), 0, 200, 0.00000001)
+        yk = metoda_zlotego_podzialu(lambda y: f(xk, y), 0, 200, 0.00000001)
         lista_przyblizen.append([xk, yk])
 
         iteracje += 1
@@ -87,8 +54,8 @@ def metoda_gaussa_seidla(f, x0, e, max_iter=None):
             if iteracje >= max_iter:
                 break
         else:
-            # gradnext = gradient(f, xk, yk)
-            gradnext = gradient_dokladny(xk, yk)
+            gradnext = gradient(f, xk, yk)
+            # gradnext = gradient_dokladny(xk, yk)
             if  np.linalg.norm(gradnext) < e:
                 break
 
@@ -96,6 +63,7 @@ def metoda_gaussa_seidla(f, x0, e, max_iter=None):
     return [xk, yk], lista_przyblizen
 
 
-wynik = metoda_gaussa_seidla(f, x0=[1, 1], e=0.00001)
+wynik = metoda_gaussa_seidla(f, x0=[1, 1], e=0.000001)
 print(wynik[0])
+print(wynik[1])
 rysuj_wykres(f, wynik[1])
