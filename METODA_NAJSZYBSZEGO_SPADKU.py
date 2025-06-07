@@ -76,4 +76,4 @@ def metoda_najszybszego_spadku(f, x0, e=0.000001, max_iter=None):
 wynik_spadek = metoda_najszybszego_spadku(f, x0=[1, 1], e=0.000001)
 print(wynik_spadek[0])
 
-rysuj_wykres(f, wynik_spadek[1])
+# rysuj_wykres(f, wynik_spadek[1])

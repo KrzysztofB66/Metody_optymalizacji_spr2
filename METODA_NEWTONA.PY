@@ -70,4 +70,4 @@ def metoda_newtona(f, x0, e=0.000001, max_iter=None):
 wynik = metoda_newtona(f, x0=[1, 1], e=0.000001)
 print(wynik[0])
 
-rysuj_wykres(f, wynik[1])
+# rysuj_wykres(f, wynik[1])

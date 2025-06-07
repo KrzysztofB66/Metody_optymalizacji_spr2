@@ -66,4 +66,4 @@ def metoda_gaussa_seidla(f, x0, e=None, max_iter=None):
 wynik = metoda_gaussa_seidla(f, x0=[1, 1], e=0.000001)
 print(wynik[0])
 print(wynik[1])
-rysuj_wykres(f, wynik[1])
+# rysuj_wykres(f, wynik[1])

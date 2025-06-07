@@ -1,10 +1,10 @@
 from rysowanie_wykresu import rysuj_wykres
 
-def f(x, y):
-    return 4 * y ** 3 + x ** 2 - 3 * x * y - x + 9
-
 # def f(x, y):
-#     return 2.5*((x**2-y)**2) + (1-x)**2
+#     return 4 * y ** 3 + x ** 2 - 3 * x * y - x + 9
+
+def f(x, y):
+    return 2.5*((x**2-y)**2) + (1-x)**2
 
 def hooke_jeeves_min(f, x0, e=0.01, beta=0.5, epsilon=None, max_iter=None):
     xB0 = [x0[0], x0[1]]
@@ -71,9 +71,9 @@ def hooke_jeeves_min(f, x0, e=0.01, beta=0.5, epsilon=None, max_iter=None):
     return xB, lista_przyblizen
 
 
-wynik = hooke_jeeves_min(f, [1, 1], e=0.5, beta=0.5, epsilon=0.000001)
-# wynik = hooke_jeeves_min(f, [-0.5, 1], e=0.5, beta=0.5, epsilon= 0.0001)
+# wynik = hooke_jeeves_min(f, [1, 1], e=0.5, beta=0.5, epsilon=0.000001)
+wynik = hooke_jeeves_min(f, [-0.5, 1], e=0.5, beta=0.5, epsilon= 0.00001)
 print(wynik[0])
-rysuj_wykres(f, wynik[1])
+# rysuj_wykres(f, wynik[1])
 
 

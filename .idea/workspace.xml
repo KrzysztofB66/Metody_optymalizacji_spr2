@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77ca0b25-07c6-41c5-a64a-a06057c2abdf" name="Changes" comment="third&#10; commit">
-      <change afterPath="$PROJECT_DIR$/LAGRANGE.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/METODA_HOOKA_JEEVESA.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bladwz.py" afterDir="false" />
+    <list default="true" id="77ca0b25-07c6-41c5-a64a-a06057c2abdf" name="Changes" comment="4&#10; commit">
+      <change afterPath="$PROJECT_DIR$/Kod_Sprawozdanie2/METODA_SIMPLEX.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/METODA_GAUSA_SEIDLA.py" beforeDir="false" afterPath="$PROJECT_DIR$/METODA_GAUSA_SEIDLA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/METODA_HOOKA_JEEVESA.py" beforeDir="false" afterPath="$PROJECT_DIR$/METODA_HOOKA_JEEVESA.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/METODA_NAJSZYBSZEGO_SPADKU.py" beforeDir="false" afterPath="$PROJECT_DIR$/METODA_NAJSZYBSZEGO_SPADKU.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/METODA_NEWTONA.PY" beforeDir="false" afterPath="$PROJECT_DIR$/METODA_NEWTONA.PY" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rysowanie_wykresu.py" beforeDir="false" afterPath="$PROJECT_DIR$/rysowanie_wykresu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +55,7 @@
     "Python.METODA_HOOKA_JEEVESA.executor": "Run",
     "Python.METODA_NAJSZYBSZEGO_SPADKU.executor": "Run",
     "Python.METODA_NEWTONA.PY.executor": "Run",
+    "Python.METODA_SIMPLEX.executor": "Run",
     "Python.bladwz.executor": "Run",
     "Python.main.executor": "Run",
     "Python.rysowanie_wykresu.executor": "Run",
@@ -106,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746636718141</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="4&#10; commit">
+      <option name="closed" value="true" />
+      <created>1748514752375</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1748514752375</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +131,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="second commit" />
     <MESSAGE value="third&#10; commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="third&#10; commit" />
+    <MESSAGE value="4&#10; commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="4&#10; commit" />
   </component>
 </project>
